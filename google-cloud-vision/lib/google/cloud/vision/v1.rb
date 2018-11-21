@@ -17,6 +17,7 @@ require "google/cloud/vision/v1/product_search_client"
 require "google/cloud/vision/v1/image_annotator_client"
 require "google/cloud/vision/v1/product_search_service_pb"
 require "google/cloud/vision/v1/image_annotator_pb"
+require "google/cloud/vision/v1/image_annotator_client_helpers"
 
 module Google
   module Cloud
