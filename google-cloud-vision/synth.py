@@ -134,3 +134,24 @@ s.replace(
     'README.md',
     '\n'.join(['README.md', 'LICENSE'])
 )
+# Add helper methods
+s.replace(
+    'lib/google/cloud/vision.rb',
+    'Google::Cloud::Vision.const_get\\(version_module\\)::ImageAnnotator.new.*$',
+    '\n'.join([
+        'client = Google::Cloud::Vision.const_get(version_module)::ImageAnnotator.new(*args, **kwargs)',
+        '          Google::Cloud::Vision.add_methods(client, version_module)',
+        '          client'
+    ])
+)
+# require helper methods
+s.replace(
+    'lib/google/cloud/vision.rb',
+    'require "pathname"',
+    '\n'.join([
+        'require "pathname"',
+        '',
+        'require "google/cloud/vision/helpers"'
+    ])
+)
+

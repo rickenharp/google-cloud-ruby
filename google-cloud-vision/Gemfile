@@ -3,3 +3,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 12.3"
+
+gem "byebug", "~> 10.0"
